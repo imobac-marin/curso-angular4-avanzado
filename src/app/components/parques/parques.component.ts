@@ -1,11 +1,11 @@
-import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, OnInit, DoCheck } from '@angular/core';
 
 @Component({
   selector: 'app-parques',
   templateUrl: './parques.component.html',
   styleUrls: ['./parques.component.css']
 })
-export class ParquesComponent implements OnChanges, OnInit {
+export class ParquesComponent implements OnChanges, OnInit, DoCheck {
 
   @Input() nombre: string;
   @Input() metros: number;
@@ -27,6 +27,10 @@ export class ParquesComponent implements OnChanges, OnInit {
 
   ngOnInit(): void {
     console.log('Método OnInit lanzado');
+  }
+
+  ngDoCheck() {
+    console.log('El DoCheck se ha lanzado');
   }
 
   emitirEvento() {
