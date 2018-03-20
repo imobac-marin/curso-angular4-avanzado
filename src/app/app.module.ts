@@ -4,12 +4,14 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { TiendaComponent } from './components/tienda/tienda.component';
+import { ParquesComponent } from './components/parques/parques.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TiendaComponent
+    TiendaComponent,
+    ParquesComponent
   ],
   imports: [
     BrowserModule
