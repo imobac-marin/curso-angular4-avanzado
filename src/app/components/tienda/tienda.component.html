@@ -3,3 +3,13 @@
   <li>Un elemento</li>
   <li>Otro elemento</li>
 </ul>
+<hr>
+<p>Nombre del parque:
+  <input type="text" [(ngModel)]="nombreParque" (keyup)="mostrarNombre()" />
+</p>
+<p>Resultado: {{nombreParque}}</p>
+
+<div *ngIf="nombreParque">
+  <h3>Hijo:</h3>
+  <app-parques [nombre]="nombreParque" [metros]="567"></app-parques>
+</div>
