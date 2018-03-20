@@ -9,7 +9,17 @@
 </p>
 <p>Resultado: {{nombreParque}}</p>
 
+<div *ngIf="miParque">
+  <h4>Datos de miParque desde el hijo</h4>
+  <ol>
+    <li>{{miParque.nombre}}</li>
+    <li>{{miParque.metros}}</li>
+    <li>{{miParque.vegetacion}}</li>
+    <li>{{miParque.abierto}}</li>
+  </ol>
+</div>
+
 <div *ngIf="nombreParque">
   <h3>Hijo:</h3>
-  <app-parques [nombre]="nombreParque" [metros]="567"></app-parques>
+  <app-parques [nombre]="nombreParque" [metros]="567" (getDatos)="verDatosParque($event)"></app-parques>
 </div>

@@ -9,6 +9,7 @@ export class TiendaComponent implements OnInit {
 
   public titulo: string;
   public nombreParque: string;
+  public miParque;
   constructor() {
     this.titulo = 'Esta es una tienda';
   }
@@ -18,6 +19,11 @@ export class TiendaComponent implements OnInit {
 
   mostrarNombre() {
     console.log(this.nombreParque);
+  }
+
+  verDatosParque(event) {
+    console.log(event);
+    this.miParque = event;
   }
 
 }

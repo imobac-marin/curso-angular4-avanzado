@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-parques',
@@ -7,17 +7,29 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ParquesComponent implements OnInit {
 
-@Input() nombre: string;
-@Input() metros: number;
-public vegetacion: string;
-public abierto: boolean;
+  @Input() nombre: string;
+  @Input() metros: number;
+  public vegetacion: string;
+  public abierto: boolean;
+  @Output() getDatos = new EventEmitter();
 
   constructor() {
+    this.nombre = 'Parque natural para caballos';
+    this.metros = 450;
     this.vegetacion = 'Alta';
     this.abierto = true;
-   }
+  }
 
   ngOnInit() {
+  }
+
+  emitirEvento() {
+    this.getDatos.emit({
+      'nombre': this.nombre,
+      'metros': this.metros,
+      'vegetacion': this.vegetacion,
+      'abierto': this.abierto
+    });
   }
 
 }
