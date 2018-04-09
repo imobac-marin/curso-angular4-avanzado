@@ -16,4 +16,9 @@ export class AppComponent implements OnInit, DoCheck {
   ngDoCheck() {
     this.emailContacto = localStorage.getItem('emailContacto');
   }
+
+  borrarEmail() {
+    localStorage.removeItem('emailContacto');
+    this.emailContacto = null;
+  }
 }
