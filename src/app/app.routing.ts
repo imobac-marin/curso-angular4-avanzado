@@ -17,6 +17,7 @@ const appRoutes: Routes = [
   { path: 'animales', component: AnimalsComponent },
   { path: 'contacto', component: ContactComponent },
   { path: 'cuidadores', component: KeepersComponent },
+  { path: 'tienda', component: TiendaComponent },
   { path: '**', component: HomeComponent }
 ];
 
