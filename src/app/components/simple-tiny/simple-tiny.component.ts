@@ -1,5 +1,4 @@
 import { Component, OnDestroy, AfterViewInit, EventEmitter, Input, Output } from '@angular/core';
-
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'simple-tiny',
