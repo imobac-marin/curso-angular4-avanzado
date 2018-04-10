@@ -13,9 +13,8 @@ import { AnimalsComponent } from './components/animals/animals.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { KeepersComponent } from './components/keepers/keepers.component';
 import { SimpleTinyComponent } from './components/simple-tiny/simple-tiny.component';
-
-// Importar nuestro nuevo módulo.
 import { ModuloemailModule } from './moduloemail/moduloemail.module';
+
 
 
 @NgModule({
