@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+declare var jQuery: any;
+declare var $: any;
 
 @Component({
   selector: 'app-tienda',
@@ -15,6 +17,10 @@ export class TiendaComponent implements OnInit {
   }
 
   ngOnInit() {
+    $('#textojq').hide();
+    $('#botonjq').click(function () {
+      $('#textojq').slideToggle();
+    });
   }
 
   mostrarNombre() {
