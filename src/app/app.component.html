@@ -26,11 +26,6 @@
           <a [routerLink]="['/contacto']" [routerLinkActive]="['active']">
             <span class="glyphicon glyphicon-comment"></span> Contacto</a>
         </li>
-        <li class="hidden">
-          <span *ngIf="emailContacto">{{emailContacto}}
-            <button (click)="borrarEmail()">Eliminar email de contacto</button>
-          </span>
-        </li>
       </ul>
     </div>
   </nav>
