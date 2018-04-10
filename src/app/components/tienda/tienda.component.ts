@@ -21,6 +21,8 @@ export class TiendaComponent implements OnInit {
     $('#botonjq').click(function () {
       $('#textojq').slideToggle();
     });
+
+    $('#caja').dotdotdot();
   }
 
   mostrarNombre() {
