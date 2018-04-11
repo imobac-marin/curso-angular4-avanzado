@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { routing, appRoutingProviders } from './app.routing';
 
@@ -35,7 +36,8 @@ import { AdminModule } from './admin/admin.module';
     HttpModule,
     routing,
     ModuloemailModule,
-    AdminModule
+    AdminModule,
+    BrowserAnimationsModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]
