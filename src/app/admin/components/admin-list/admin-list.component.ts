@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AdminListComponent implements OnInit {
 
   title = 'AdminList';
+  numbers = new Array(10);
   constructor() { }
 
   ngOnInit() {
