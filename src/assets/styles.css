@@ -1,32 +1,82 @@
 /* You can add global styles to this file, and also import other style files */
-.navigation.col-lg-12{
+
+.navigation.col-lg-12 {
   margin-top: 12px;
 }
 
-.jumbotron{
+.jumbotron {
   padding: 40px;
   border-radius: 5px;
   box-shadow: 2px 2px 1px #ccc;
 }
 
-.navbar-nav .active{
+.navbar-nav .active {
   border-bottom: 3px solid orange;
 }
 
-.transiciones{
+.transiciones {
   padding: 10px;
   background: red;
   color: white;
   border-radius: 20px;
   border: 4px solid blue;
+  width: 100px;
   transition: border 2s, border-radius 500ms, background 5s;
+  display: block;
 }
 
-.transiciones:hover{
+.transiciones:hover {
   text-decoration: none;
   color: white;
   cursor: pointer;
   border-radius: 2px;
   background: #ccc;
   border: 1px solid red;
+}
+
+.caja-animada {
+  background: green;
+  border: 5px solid black;
+  width: 200px;
+  height: 200px;
+  margin-top: 15px;
+  animation-name: rotacion;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes deslizamiento {
+  0% {
+    margin-left: 0px;
+  }
+  25% {
+    margin-left: 400px;
+    background: red;
+  }
+  50%{
+    border-radius: 1000px;
+  }
+  75%{
+    margin-left: 0px;
+    background: yellow;
+    border-radius: 0px;
+  }
+  100%{
+
+  }
+}
+
+@keyframes rotacion{
+  0%{
+    margin-left: 0px;
+    transform: rotate(0deg);
+  }
+  50%{
+    margin-left: 600px;
+    transform: rotate(360deg);
+  }
+  100%{
+    margin-left: 0px;
+    transform: rotate(0deg);
+  }
 }
