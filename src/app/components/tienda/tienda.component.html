@@ -1,43 +1,45 @@
+<div class="col-lg-12" [@fadeIn]>
+  <a class="boton-activo btn btn-success" [@marcar]="status" (click)="cambiarEstado(status)">
+    <span *ngIf="status == 'inactive'">Activar</span>
+    <span *ngIf="status == 'active'">Desactivar</span>
+  </a>
+  <hr>
+  <h4>Animaciones CSS3</h4>
+  <a class="transiciones">Transiciones</a>
+  <div class="clearfix"></div>
 
-<a class="boton-activo btn btn-success" [@marcar]="status" (click)="cambiarEstado(status)">
-  <span *ngIf="status == 'inactive'">Activar</span>
-  <span *ngIf="status == 'active'">Desactivar</span></a>
-<hr>
-<h4>Animaciones CSS3</h4>
-<a class="transiciones">Transiciones</a>
-<div class="clearfix"></div>
+  <div class="caja-animada"></div>
 
-<div class="caja-animada"></div>
+  <h4>Utilizar jQuery dentro de Angular</h4>
+  <button id="botonjq">Mostrar texto</button>
+  <p id="textojq" class="alert alert-warning">Este es un texto de prueba</p>
+  <div id="caja" style="width: 100px; height: 100px; border: 1px solid black">Este es un texto de ejemplo largo, que se va a salir del cuadro, pero con jquerydotdotdot, se va a arreglar pronto. </div>
 
-<h4>Utilizar jQuery dentro de Angular</h4>
-<button id="botonjq">Mostrar texto</button>
-<p id="textojq" class="alert alert-warning">Este es un texto de prueba</p>
-<div id="caja" style="width: 100px; height: 100px; border: 1px solid black">Este es un texto de ejemplo largo, que se va a salir del cuadro, pero con jquerydotdotdot, se va a arreglar pronto. </div>
+  <simple-tiny [elementId]="'descripcionTienda'" (onEditorKeyUp)="textoRichEditor($event)"></simple-tiny>
+  <hr>
+  <h1>{{titulo}}</h1>
+  <ul>
+    <li>Un elemento</li>
+    <li>Otro elemento</li>
+  </ul>
+  <hr>
+  <p>Nombre del parque:
+    <input type="text" [(ngModel)]="nombreParque" (keyup)="mostrarNombre()" />
+  </p>
+  <p>Resultado: {{nombreParque}}</p>
 
-<simple-tiny [elementId]="'descripcionTienda'" (onEditorKeyUp)="textoRichEditor($event)"></simple-tiny>
-<hr>
-<h1>{{titulo}}</h1>
-<ul>
-  <li>Un elemento</li>
-  <li>Otro elemento</li>
-</ul>
-<hr>
-<p>Nombre del parque:
-  <input type="text" [(ngModel)]="nombreParque" (keyup)="mostrarNombre()" />
-</p>
-<p>Resultado: {{nombreParque}}</p>
+  <div *ngIf="miParque">
+    <h4>Datos de miParque desde el hijo</h4>
+    <ol>
+      <li>{{miParque.nombre}}</li>
+      <li>{{miParque.metros}}</li>
+      <li>{{miParque.vegetacion}}</li>
+      <li>{{miParque.abierto}}</li>
+    </ol>
+  </div>
 
-<div *ngIf="miParque">
-  <h4>Datos de miParque desde el hijo</h4>
-  <ol>
-    <li>{{miParque.nombre}}</li>
-    <li>{{miParque.metros}}</li>
-    <li>{{miParque.vegetacion}}</li>
-    <li>{{miParque.abierto}}</li>
-  </ol>
-</div>
-
-<div *ngIf="nombreParque">
-  <h3>Hijo:</h3>
-  <app-parques [nombre]="nombreParque" [metros]="567" (getDatos)="verDatosParque($event)"></app-parques>
+  <div *ngIf="nombreParque">
+    <h3>Hijo:</h3>
+    <app-parques [nombre]="nombreParque" [metros]="567" (getDatos)="verDatosParque($event)"></app-parques>
+  </div>
 </div>
