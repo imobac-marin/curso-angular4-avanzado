@@ -14,6 +14,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { KeepersComponent } from './components/keepers/keepers.component';
 import { SimpleTinyComponent } from './components/simple-tiny/simple-tiny.component';
 import { ModuloemailModule } from './moduloemail/moduloemail.module';
+import { AdminModule } from './admin/admin.module';
 
 
 
@@ -33,7 +34,8 @@ import { ModuloemailModule } from './moduloemail/moduloemail.module';
     FormsModule,
     HttpModule,
     routing,
-    ModuloemailModule
+    ModuloemailModule,
+    AdminModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]
