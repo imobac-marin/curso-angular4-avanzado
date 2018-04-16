@@ -13,6 +13,7 @@ export class RegistroComponent implements OnInit {
 
   title = 'Registro';
   public user: User;
+  public status: string;
 
   constructor(private _router: Router, private _activatedRoute: ActivatedRoute, private _userService: UserService) {
     this.user = new User('', '', '', '', '', 'ROLE_USER', '');
@@ -20,11 +21,21 @@ export class RegistroComponent implements OnInit {
 
   ngOnInit() {
     console.log('Componente registro cargado!!');
-    console.log(this._userService.register());
   }
 
   onSubmit() {
-    console.log(this.user);
+    this._userService.register(this.user).subscribe(
+      response => {
+        if (response.usuario) {
+          this.status = 'success';
+          this.user = new User('', '', '', '', '', 'ROLE_USER', '');
+        } else {
+          this.status = 'error';
+        }
+      },
+      error => {
+        console.log(error + 'Error al dar de alta');
+      }
+    );
   }
-
 }
