@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { User } from '../../models/user.model';
 
 @Component({
   selector: 'app-registro',
@@ -9,10 +10,17 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class RegistroComponent implements OnInit {
 
   title = 'Registro';
+  public user: User;
 
-  constructor(private _router: Router, private _activatedRoute: ActivatedRoute) { }
+  constructor(private _router: Router, private _activatedRoute: ActivatedRoute) {
+    this.user = new User('', '', '', '', '', 'ROLE_USER', '');
+  }
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+    console.log(this.user);
   }
 
 }
