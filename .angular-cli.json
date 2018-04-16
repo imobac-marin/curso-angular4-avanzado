@@ -18,7 +18,7 @@
     "testTsconfig": "tsconfig.spec.json",
     "prefix": "app",
     "styles": [
-      "styles.css",
+      "assets/styles.css",
       "../node_modules/bootstrap/dist/css/bootstrap.min.css"
     ],
     "scripts": [
@@ -26,7 +26,7 @@
       "../node_modules/bootstrap/dist/js/bootstrap.min.js",
       "../node_modules/jquery-dotdotdot/src/jquery.dotdotdot.min.js",
       "../node_modules/tinymce/tinymce.min.js",
-      "../node_modules/tinymce/themes/modern/theme.js",
+      "../node_modules/tinymce/themes/modern/theme.min.js",
       "../node_modules/tinymce/plugins/link/plugin.min.js",
       "../node_modules/tinymce/plugins/paste/plugin.min.js",
       "../node_modules/tinymce/plugins/table/plugin.min.js"
