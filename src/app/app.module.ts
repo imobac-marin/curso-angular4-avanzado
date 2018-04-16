@@ -16,6 +16,8 @@ import { KeepersComponent } from './components/keepers/keepers.component';
 import { SimpleTinyComponent } from './components/simple-tiny/simple-tiny.component';
 import { ModuloemailModule } from './moduloemail/moduloemail.module';
 import { AdminModule } from './admin/admin.module';
+import { RegistroComponent } from './components/registro/registro.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 
@@ -29,7 +31,9 @@ import { AdminModule } from './admin/admin.module';
     AnimalsComponent,
     ContactComponent,
     KeepersComponent,
-    SimpleTinyComponent
+    SimpleTinyComponent,
+    RegistroComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

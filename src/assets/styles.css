@@ -11,6 +11,16 @@
 }
 
 .navbar-nav .active {
+  border-bottom: 3px solid orange !important;
+}
+
+.navbar-default .navbar-nav>li>a {
+  transition: all 300ms;
+  border-bottom: 3px solid transparent;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+  transition: all 300ms;
   border-bottom: 3px solid orange;
 }
 
@@ -53,26 +63,26 @@
     margin-left: 400px;
     background: red;
   }
-  50%{
+  50% {
     border-radius: 1000px;
   }
-  75%{
+  75% {
     margin-left: 0px;
     background: yellow;
     border-radius: 0px;
   }
 }
 
-@keyframes rotacion{
-  0%{
+@keyframes rotacion {
+  0% {
     margin-left: 0px;
     transform: rotate(0deg);
   }
-  50%{
+  50% {
     margin-left: 600px;
     transform: rotate(360deg);
   }
-  100%{
+  100% {
     margin-left: 0px;
     transform: rotate(0deg);
   }
