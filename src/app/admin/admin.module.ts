@@ -9,6 +9,7 @@ import { MainEmailComponent } from '../moduloemail/main-email/main-email.compone
 import { AdminRoutingModule } from './admin-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { AdminGuard } from '../services/admin.guard';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { HttpModule } from '@angular/http';
     HttpModule,
     AdminRoutingModule
   ],
-  declarations: [AdminMainComponent, AdminAddComponent, AdminEditComponent, AdminListComponent]
+  declarations: [AdminMainComponent, AdminAddComponent, AdminEditComponent, AdminListComponent],
+  providers: [AdminGuard]
 })
 export class AdminModule { }

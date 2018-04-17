@@ -5,11 +5,13 @@ import { AdminAddComponent } from './components/admin-add/admin-add.component';
 import { AdminEditComponent } from './components/admin-edit/admin-edit.component';
 import { MainEmailComponent } from '../moduloemail/main-email/main-email.component';
 import { AdminMainComponent } from './components/admin-main/admin-main.component';
+import { AdminGuard } from '../services/admin.guard';
 
 const adminRoutes: Routes = [
   {
     path: 'admin-panel',
     component: AdminMainComponent,
+    canActivate: [AdminGuard],
     children: [
       { path: '', redirectTo: 'listado', pathMatch: 'full' },
       { path: 'listado', component: AdminListComponent },
