@@ -24,6 +24,7 @@ import { LoginComponent } from './components/login/login.component';
 
 // Servicios
 import { UserService } from './services/user.service';
+import { UserEditComponent } from './components/user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { UserService } from './services/user.service';
     KeepersComponent,
     SimpleTinyComponent,
     RegistroComponent,
-    LoginComponent
+    LoginComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { KeepersComponent } from './components/keepers/keepers.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { LoginComponent } from './components/login/login.component';
+import { UserEditComponent } from './components/user-edit/user-edit.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -22,6 +23,7 @@ const appRoutes: Routes = [
   { path: 'tienda', component: TiendaComponent },
   { path: 'registro', component: RegistroComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'mis-datos', component: UserEditComponent },
   { path: '**', component: HomeComponent }
 ];
 
