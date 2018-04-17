@@ -1,6 +1,7 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
 import { UserService } from './services/user.service';
 import { Router } from '@angular/router';
+import { GLOBAL } from './services/global';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +12,10 @@ export class AppComponent implements OnInit, DoCheck {
   title = 'NgZoo';
   emailContacto: string;
   public identity: any;
+  public url: string;
 
   constructor(private _userService: UserService, private _router: Router) {
+    this.url = GLOBAL.url;
   }
 
   ngOnInit() {

@@ -24,6 +24,9 @@
       <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" required />
       <span class="alert alert-danger" *ngIf="!email.valid && email.touched">El correo electrónico es obligatorio</span>
     </p>
+    <div class="imageForEdit" *ngIf="user.image && user.image !='null'">
+      <img src="{{url + 'get-image-file/' + user.image}}" >
+    </div>
     <p>
       <label>Sube tu avatar</label>
       <input type="file" placeholder="Subir imagen" (change)="fileChangeEvent($event)" />
