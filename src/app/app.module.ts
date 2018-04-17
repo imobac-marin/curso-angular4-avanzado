@@ -10,6 +10,10 @@ import { AdminModule } from './admin/admin.module';
 // Ruteo
 import { routing, appRoutingProviders } from './app.routing';
 
+// Servicios
+import { UserService } from './services/user.service';
+import { UploadService } from './services/upload.service';
+
 // Componentes
 import { AppComponent } from './app.component';
 import { TiendaComponent } from './components/tienda/tienda.component';
@@ -21,9 +25,6 @@ import { KeepersComponent } from './components/keepers/keepers.component';
 import { SimpleTinyComponent } from './components/simple-tiny/simple-tiny.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { LoginComponent } from './components/login/login.component';
-
-// Servicios
-import { UserService } from './services/user.service';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 
 @NgModule({
@@ -49,7 +50,7 @@ import { UserEditComponent } from './components/user-edit/user-edit.component';
     AdminModule,
     BrowserAnimationsModule
   ],
-  providers: [appRoutingProviders, UserService],
+  providers: [appRoutingProviders, UserService, UploadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

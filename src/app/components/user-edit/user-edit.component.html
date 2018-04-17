@@ -24,6 +24,10 @@
       <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" required />
       <span class="alert alert-danger" *ngIf="!email.valid && email.touched">El correo electrónico es obligatorio</span>
     </p>
-    <input type="submit" class="btn btn-primary" [disabled]="!userEditForm.form.valid" />
+    <p>
+      <label>Sube tu avatar</label>
+      <input type="file" placeholder="Subir imagen" (change)="fileChangeEvent($event)" />
+    </p>
+    <input type="submit" class="btn btn-primary" [disabled]="!userEditForm.form.valid" value="Actualizar mis datos" />
   </form>
 </div>
