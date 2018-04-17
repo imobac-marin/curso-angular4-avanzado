@@ -18,6 +18,7 @@ export class AnimalService {
       'Content-Type': 'application/json',
       'Authorization': token
     });
+    console.log('Animal service pre post');
 
     return this._http.post(this.url + 'animal', params, { headers: headers }).map(res => res.json());
   }

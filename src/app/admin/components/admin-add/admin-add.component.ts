@@ -18,6 +18,7 @@ export class AdminAddComponent implements OnInit {
   public animal: Animal;
   public identity: any;
   public token: any;
+  public status: any;
 
   constructor(
     private _router: Router,
@@ -34,6 +35,28 @@ export class AdminAddComponent implements OnInit {
 
   ngOnInit() {
     console.log('admin-add component cargado');
+  }
+
+  onSubmit() {
+    console.log(this.animal);
+    this._animalService.addAnimal(this.token, this.animal).subscribe(
+      response => {
+        if (!response.animalStored) {
+          this.status = 'error';
+        } else {
+          this.status = 'success';
+          this.animal = response.animalStored;
+          // Subir la imagen del animal
+          this._router.navigate(['admin-panel/listado']);
+        }
+      },
+      error => {
+        const errorMessage = error;
+        if (errorMessage !== undefined) {
+          this.status = 'error';
+        }
+      }
+    );
   }
 
 }

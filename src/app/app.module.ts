@@ -26,6 +26,7 @@ import { SimpleTinyComponent } from './components/simple-tiny/simple-tiny.compon
 import { RegistroComponent } from './components/registro/registro.component';
 import { LoginComponent } from './components/login/login.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { AnimalService } from './services/animal.service';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,7 @@ import { UserEditComponent } from './components/user-edit/user-edit.component';
     AdminModule,
     BrowserAnimationsModule
   ],
-  providers: [appRoutingProviders, UserService, UploadService],
+  providers: [appRoutingProviders, UserService, UploadService, AnimalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
