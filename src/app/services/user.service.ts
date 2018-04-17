@@ -56,4 +56,14 @@ export class UserService {
     return this.token;
   }
 
+  updateUser(userToUpdate) {
+    // tslint:disable-next-line:prefer-const
+    let params = JSON.stringify(userToUpdate);
+    const headers = new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': this.getToken()
+    });
+    return this._http.put(this.url + 'update-user/' + userToUpdate._id, params, { headers: headers }).map(res => res.json());
+  }
+
 }
