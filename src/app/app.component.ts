@@ -1,5 +1,6 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
 import { UserService } from './services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ export class AppComponent implements OnInit, DoCheck {
   emailContacto: string;
   public identity: any;
 
-  constructor(private _userService: UserService) {
+  constructor(private _userService: UserService, private _router: Router) {
   }
 
   ngOnInit() {
@@ -27,5 +28,11 @@ export class AppComponent implements OnInit, DoCheck {
   borrarEmail() {
     localStorage.removeItem('emailContacto');
     this.emailContacto = null;
+  }
+
+  logout() {
+    localStorage.clear();
+    this.identity = null;
+    this._router.navigate(['/']);
   }
 }
