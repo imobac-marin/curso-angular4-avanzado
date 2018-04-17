@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   public user: User;
   public identity: any;
   public token: any;
+  public status: string;
 
   constructor(private _router: Router, private _activatedRoute: ActivatedRoute, private _userService: UserService) {
     this.user = new User('', '', '', '', '', 'ROLE_USER', '');
@@ -22,6 +23,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     console.log('Se carga el componente Login');
+    console.log(this._userService.getIdentity());
+    console.log(this._userService.getToken());
   }
 
   onSubmit() {
@@ -29,12 +32,12 @@ export class LoginComponent implements OnInit {
     this._userService.signUpToApp(this.user).subscribe(
       res => {
         this.identity = res.usuario;
-        console.log('Identity: ' + JSON.stringify(this.identity));
         if (!this.identity || !this.identity._id) {
           console.log('El usuario no se ha logueado correctamente');
         } else {
-          delete this.identity['password'];
           // Conseguir el token
+          this.identity.password = '';
+          localStorage.setItem('identity', JSON.stringify(this.identity));
           this._userService.signUpToApp(this.user).subscribe(
             response => {
               this.token = response.token;
@@ -42,7 +45,10 @@ export class LoginComponent implements OnInit {
                 console.log('El token no se ha generado');
               } else {
                 // Mostrar el token
-                console.log(this.token);
+                console.log('Token generado, login satisfactorio');
+                localStorage.setItem('token', this.token);
+                this.status = 'success';
+                this._router.navigate(['/']);
               }
             },
             error => {
@@ -52,7 +58,12 @@ export class LoginComponent implements OnInit {
         }
       },
       error => {
-        console.log(error);
+        const errorMessage = error;
+        if (errorMessage != null) {
+          const body = JSON.parse(error._body);
+          this.status = 'error';
+          console.log(body);
+        }
       }
     );
   }

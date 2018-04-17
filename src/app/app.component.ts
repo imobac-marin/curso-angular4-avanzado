@@ -1,4 +1,5 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +9,19 @@ import { Component, OnInit, DoCheck } from '@angular/core';
 export class AppComponent implements OnInit, DoCheck {
   title = 'NgZoo';
   emailContacto: string;
+  public identity: any;
+
+  constructor(private _userService: UserService) {
+  }
 
   ngOnInit() {
     console.log('Desde el localStorage: ' + localStorage.getItem('emailContacto'));
+    this.identity = this._userService.getIdentity();
   }
 
   ngDoCheck() {
     this.emailContacto = localStorage.getItem('emailContacto');
+    this.identity = this._userService.getIdentity();
   }
 
   borrarEmail() {
