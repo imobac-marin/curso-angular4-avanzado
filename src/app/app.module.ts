@@ -27,6 +27,7 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { LoginComponent } from './components/login/login.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { AnimalService } from './services/animal.service';
+import { AnimalDetailComponent } from './components/animal-detail/animal-detail.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { AnimalService } from './services/animal.service';
     SimpleTinyComponent,
     RegistroComponent,
     LoginComponent,
-    UserEditComponent
+    UserEditComponent,
+    AnimalDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,12 @@ import { AnimalService } from './services/animal.service';
     AdminModule,
     BrowserAnimationsModule
   ],
-  providers: [appRoutingProviders, UserService, UploadService, AnimalService],
+  providers: [
+    appRoutingProviders,
+    UserService,
+    UploadService,
+    AnimalService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

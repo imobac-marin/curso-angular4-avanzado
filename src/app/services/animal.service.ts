@@ -30,4 +30,12 @@ export class AnimalService {
     return this._http.get(this.url + 'get-animals', { headers: headers }).map(res => res.json());
   }
 
+  getAnimal(id: string) {
+    const headers = new Headers({
+      'Content-Type': 'application/json',
+    });
+
+    return this._http.get(this.url + 'get-animal/' + id, { headers: headers }).map(res => res.json());
+  }
+
 }

@@ -5,6 +5,7 @@ import { GLOBAL } from '../../../services/global';
 import { Animal } from '../../../models/animal.model';
 import { UserService } from '../../../services/user.service';
 import { UploadService } from '../../../services/upload.service';
+import { User } from '../../../models/user.model';
 
 @Component({
   selector: 'app-admin-add',
@@ -29,7 +30,7 @@ export class AdminAddComponent implements OnInit {
     private _uploadService: UploadService
   ) {
     this.url = GLOBAL.url;
-    this.animal = new Animal('', '', '', 2017, '', '');
+    this.animal = new Animal('', '', '', 2017, '', new User('', '', '', '', '', '', ''));
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
   }

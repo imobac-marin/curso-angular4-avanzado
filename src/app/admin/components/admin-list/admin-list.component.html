@@ -13,15 +13,15 @@
         <td>{{i+1}}. {{animal.name}}</td>
         <td>{{animal.year}}</td>
         <td>
-          <button class="btn btn-sm btn-success">
+          <a [routerLink]="['/animal', animal._id]" class="btn btn-sm btn-success">
             <span class="glyphicon glyphicon-eye-open"></span>Ver
-          </button>
-          <button class="btn btn-sm btn-primary">
+          </a>
+          <a [routerLink]="['/animal', animal._id]" class="btn btn-sm btn-primary">
             <span class="glyphicon glyphicon-pencil"></span>Editar
-          </button>
-          <button class="btn btn-sm btn-danger">
+          </a>
+          <a [routerLink]="['/animal', animal._id]" class="btn btn-sm btn-danger">
             <span class="glyphicon glyphicon-trash"></span>Borrar
-          </button>
+          </a>
         </td>
       </tr>
     </tbody>

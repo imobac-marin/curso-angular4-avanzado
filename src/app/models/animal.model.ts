@@ -8,7 +8,7 @@ export class Animal {
     public description: string,
     public year: number,
     public image: string,
-    public user: string
+    public user: User
   ) {
 
   }
