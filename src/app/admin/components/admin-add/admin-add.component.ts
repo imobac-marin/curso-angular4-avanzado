@@ -19,6 +19,7 @@ export class AdminAddComponent implements OnInit {
   public identity: any;
   public token: any;
   public status: any;
+  public filesToUpload: Array<File>;
 
   constructor(
     private _router: Router,
@@ -38,7 +39,6 @@ export class AdminAddComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.animal);
     this._animalService.addAnimal(this.token, this.animal).subscribe(
       response => {
         if (!response.animalStored) {
@@ -47,7 +47,17 @@ export class AdminAddComponent implements OnInit {
           this.status = 'success';
           this.animal = response.animalStored;
           // Subir la imagen del animal
-          this._router.navigate(['admin-panel/listado']);
+          if (!this.filesToUpload) {
+            this._router.navigate(['admin-panel/listado']);
+          } else {
+            this._uploadService.makeFileRequest(
+              this.url + 'upload-image-animal/' + this.animal._id, [], this.filesToUpload, this.token, 'image')
+              .then((result: any) => {
+                this.animal.image = result.image;
+                this._router.navigate(['admin-panel/listado']);
+              });
+          }
+
         }
       },
       error => {
@@ -57,6 +67,11 @@ export class AdminAddComponent implements OnInit {
         }
       }
     );
+  }
+
+  fileChangeEvent(fileInput: any) {
+    this.filesToUpload = <Array<File>>fileInput.target.files;
+    console.log(this.filesToUpload);
   }
 
 }
