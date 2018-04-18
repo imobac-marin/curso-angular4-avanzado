@@ -14,7 +14,7 @@ import { User } from '../../../models/user.model';
 })
 export class AdminAddComponent implements OnInit {
 
-  title = 'AdminAdd';
+  title = 'Crear';
   public url: string;
   public animal: Animal;
   public identity: any;
