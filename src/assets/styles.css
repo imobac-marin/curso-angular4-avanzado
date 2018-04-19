@@ -1,9 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 
-h3 a{
+.animal-image-mask img,
+.user-image-mask img{
+  max-height: 400px;
+}
+
+h3 a {
   color: black;
 }
-.animal-image-mask{
+
+.animal-image-mask,
+.user-image-mask {
   width: 100%;
   height: 200px;
   overflow: hidden;
@@ -17,7 +24,7 @@ h3 a{
   margin-top: 9px;
 }
 
-.avatar img{
+.avatar img {
   height: 45px;
 }
 

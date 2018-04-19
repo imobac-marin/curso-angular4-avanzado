@@ -1,3 +1,14 @@
 <div class="col-lg-12" [@fadeIn]>
   <h1>{{title}}</h1>
+  <div class="col-lg-3" *ngFor="let user of users">
+    <div class="thumbnail">
+      <div class="user-image-mask">
+        <img src="{{url + 'get-image-file/' + user.image}}" alt="{{user.name}}" *ngIf="user.image">
+        <img src="http://via.placeholder.com/385x200" alt="{{user.name}}" *ngIf="!user.image">
+      </div>
+      <div class="caption">
+        <h3>{{user.name + '' + user.surname}}</h3>
+      </div>
+    </div>
+  </div>
 </div>

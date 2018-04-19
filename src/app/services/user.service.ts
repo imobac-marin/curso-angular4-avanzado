@@ -66,4 +66,12 @@ export class UserService {
     return this._http.put(this.url + 'update-user/' + userToUpdate._id, params, { headers: headers }).map(res => res.json());
   }
 
+  getKeepers() {
+    const headers = new Headers({
+      'Content-Type': 'application/json',
+    });
+
+    return this._http.get(this.url + 'keepers', { headers: headers }).map(res => res.json());
+  }
+
 }
