@@ -19,9 +19,36 @@
           <a [routerLink]="['/admin-panel/editar', animal._id]" class="btn btn-sm btn-primary">
             <span class="glyphicon glyphicon-pencil"></span>Editar
           </a>
-          <a [routerLink]="['/animal', animal._id]" class="btn btn-sm btn-danger">
+          <a href="#myModal-{{animal._id}}" role="button" data-toggle="modal" class="btn btn-sm btn-danger">
             <span class="glyphicon glyphicon-trash"></span>Borrar
           </a>
+
+          <!-- Modal HTML -->
+          <div id="myModal-{{animal._id}}" class="modal fade">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title">Borrar animal</h4>
+                </div>
+                <div class="modal-body">
+                  <p>¿Seguro que quieres borrar el animal
+                    <strong>{{animal.name}}</strong>?
+                  </p>
+                  <p class="text-warning">
+                    <small>Si borras este animal, no podrás recuperarlo.</small>
+                  </p>
+                  <p class="text-warning">
+                    <small>ID: {{animal._id}}</small>
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-primary" (click)="deleteAnimal(animal._id)">Borrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </td>
       </tr>
     </tbody>

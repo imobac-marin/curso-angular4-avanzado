@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers } from '@angular/http';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 import { GLOBAL } from './global';
@@ -49,6 +49,17 @@ export class AnimalService {
 
     return this._http.put(this.url + 'update-animal/' + id, params, { headers: headers }).map(res => res.json());
 
+  }
+
+  deleteAnimal(token: string, id: string) {
+    const headers = new Headers({
+      'Content-Type': 'application/json',
+      'Authorization': token
+    });
+
+    const options = new RequestOptions({ headers: headers });
+
+    return this._http.delete(this.url + 'get-animal/' + id, options).map(res => res.json());
   }
 
 }

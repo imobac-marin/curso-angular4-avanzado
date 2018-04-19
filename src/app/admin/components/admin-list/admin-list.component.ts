@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AnimalService } from '../../../services/animal.service';
 import { Animal } from '../../../models/animal.model';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-admin-list',
@@ -14,10 +15,17 @@ export class AdminListComponent implements OnInit {
   numbers = new Array(10);
   animals = new Array<Animal>();
   status: string;
-  constructor(private _router: Router, private _animalService: AnimalService) { }
+  token: string;
+  constructor(private _router: Router, private _animalService: AnimalService, private _userService: UserService) {
+    this.token = this._userService.getToken();
+  }
 
   ngOnInit() {
     console.log('Admin-list component cargado');
+    this.getAnimals();
+  }
+
+  getAnimals() {
     this._animalService.getAnimals().subscribe(
       response => {
         if (!response.animals) {
@@ -33,6 +41,28 @@ export class AdminListComponent implements OnInit {
         }
       }
     );
+  }
+
+  deleteAnimal(id: string) {
+    if (this.token != null) {
+      this._animalService.deleteAnimal(this.token, id).subscribe(
+        response => {
+          if (!response.animal) {
+            console.log('error en el servidor');
+          } else {
+            console.log('Se ha borrado el animal');
+            this.getAnimals();
+            $('#myModal-' + id).modal('hide');
+          }
+        },
+        error => {
+          console.log('error en el servidor: ' + error);
+        }
+      );
+    } else {
+      alert('No se encuentra el token. Se le redigirá al home');
+      this._router.navigate(['/home']);
+    }
   }
 
 }
