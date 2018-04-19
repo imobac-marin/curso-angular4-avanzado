@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AdminGuard } from '../services/admin.guard';
 import { SearchPipe } from './pipes/search.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { SearchPipe } from './pipes/search.pipe';
     CommonModule,
     FormsModule,
     HttpModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    BrowserAnimationsModule
   ],
   declarations: [
     AdminMainComponent,

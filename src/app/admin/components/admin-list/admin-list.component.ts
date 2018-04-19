@@ -3,11 +3,13 @@ import { Router } from '@angular/router';
 import { AnimalService } from '../../../services/animal.service';
 import { Animal } from '../../../models/animal.model';
 import { UserService } from '../../../services/user.service';
+import { fadeLateral } from '../../animation';
 
 @Component({
   selector: 'app-admin-list',
   templateUrl: './admin-list.component.html',
-  styleUrls: ['./admin-list.component.css']
+  styleUrls: ['./admin-list.component.css'],
+  animations: [fadeLateral]
 })
 export class AdminListComponent implements OnInit {
 

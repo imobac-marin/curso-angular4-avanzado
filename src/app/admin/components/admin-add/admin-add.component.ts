@@ -6,11 +6,13 @@ import { Animal } from '../../../models/animal.model';
 import { UserService } from '../../../services/user.service';
 import { UploadService } from '../../../services/upload.service';
 import { User } from '../../../models/user.model';
+import { fadeLateral } from '../../animation';
 
 @Component({
   selector: 'app-admin-add',
   templateUrl: './admin-add.component.html',
-  styleUrls: ['./admin-add.component.css']
+  styleUrls: ['./admin-add.component.css'],
+  animations: [fadeLateral]
 })
 export class AdminAddComponent implements OnInit {
 
