@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { fadeIn } from '../../animations';
 import { AnimalService } from '../../services/animal.service';
 import { Animal } from '../../models/animal.model';
+import { GLOBAL } from '../../services/global';
 
 @Component({
   selector: 'app-animals',
@@ -13,8 +14,11 @@ export class AnimalsComponent implements OnInit {
   title = 'Animales';
   animals: Array<Animal>;
   public status: string;
+  public url: string;
 
-  constructor(private _animalService: AnimalService) { }
+  constructor(private _animalService: AnimalService) {
+    this.url = GLOBAL.url;
+   }
 
   ngOnInit() {
     console.log('animals.component cargado!!');

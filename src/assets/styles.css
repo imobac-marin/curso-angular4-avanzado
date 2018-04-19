@@ -1,5 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
+h3 a{
+  color: black;
+}
+.animal-image-mask{
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
 .avatar {
   width: 35px;
   height: 35px;
