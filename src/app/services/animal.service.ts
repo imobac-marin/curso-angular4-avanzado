@@ -48,7 +48,6 @@ export class AnimalService {
     });
 
     return this._http.put(this.url + 'update-animal/' + id, params, { headers: headers }).map(res => res.json());
-
   }
 
   deleteAnimal(token: string, id: string) {
