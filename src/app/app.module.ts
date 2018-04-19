@@ -42,7 +42,7 @@ import { AnimalDetailComponent } from './components/animal-detail/animal-detail.
     RegistroComponent,
     LoginComponent,
     UserEditComponent,
-    AnimalDetailComponent
+    AnimalDetailComponent,
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AdminGuard } from '../services/admin.guard';
+import { SearchPipe } from './pipes/search.pipe';
 
 
 @NgModule({
@@ -19,7 +20,13 @@ import { AdminGuard } from '../services/admin.guard';
     HttpModule,
     AdminRoutingModule
   ],
-  declarations: [AdminMainComponent, AdminAddComponent, AdminEditComponent, AdminListComponent],
+  declarations: [
+    AdminMainComponent,
+    AdminAddComponent,
+    AdminEditComponent,
+    AdminListComponent,
+    SearchPipe
+  ],
   providers: [AdminGuard]
 })
 export class AdminModule { }

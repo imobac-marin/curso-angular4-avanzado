@@ -16,6 +16,8 @@ export class AdminListComponent implements OnInit {
   animals = new Array<Animal>();
   status: string;
   token: string;
+  public busqueda: string;
+
   constructor(private _router: Router, private _animalService: AnimalService, private _userService: UserService) {
     this.token = this._userService.getToken();
   }
